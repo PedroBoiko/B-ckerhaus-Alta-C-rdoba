@@ -1,0 +1,456 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bäckerhaus | Pan. Café. Vermut.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#2c2621",
+                      "outline": "#7e756f",
+                      "on-secondary-container": "#772f0e",
+                      "surface-container": "#efeeeb",
+                      "on-primary-fixed-variant": "#4d4540",
+                      "surface": "#faf9f6",
+                      "surface-variant": "#e3e2e0",
+                      "inverse-on-surface": "#f2f1ee",
+                      "on-primary-fixed": "#201b16",
+                      "surface-bright": "#faf9f6",
+                      "primary": "#17120d",
+                      "on-surface": "#1a1c1a",
+                      "tertiary-fixed-dim": "#cfc6ae",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#dbdad7",
+                      "tertiary-fixed": "#ece2c9",
+                      "on-primary-container": "#968c86",
+                      "background": "#faf9f6",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#4c4634",
+                      "secondary-container": "#fe9970",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f4f3f1",
+                      "secondary-fixed-dim": "#ffb598",
+                      "surface-container-highest": "#e3e2e0",
+                      "on-surface-variant": "#4d4540",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#d0c4bd",
+                      "tertiary-container": "#2c2717",
+                      "secondary-fixed": "#ffdbce",
+                      "on-tertiary-fixed": "#201b0c",
+                      "primary-fixed": "#ece0d8",
+                      "surface-tint": "#655d57",
+                      "tertiary": "#161305",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1a1c1a",
+                      "inverse-surface": "#2f312f",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#d0c4bd",
+                      "on-tertiary-container": "#968e78",
+                      "surface-container-high": "#e9e8e5",
+                      "on-secondary-fixed-variant": "#78310f",
+                      "outline-variant": "#d0c4bd",
+                      "secondary": "#974725",
+                      "on-secondary-fixed": "#370e00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-mobile": "20px",
+                      "section-gap": "120px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Libre Caslon Text"
+                      ],
+                      "display-lg-mobile": [
+                              "Libre Caslon Text"
+                      ],
+                      "headline-md": [
+                              "Libre Caslon Text"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0px 0px 40px rgba(23, 18, 13, 0.04);
+        }
+        
+        .border-inset-soft {
+            box-shadow: inset 0 0 0 1px rgba(23, 18, 13, 0.1);
+        }
+    
+        html { scroll-padding-top: 84px; }
+        a, button { -webkit-tap-highlight-color: transparent; }
+        .mobile-menu-open { overflow: hidden; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+</style>
+</head>
+<body id="top" class="bg-surface text-on-surface font-body-md text-body-md antialiased overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- Navigation (TopNavBar) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-md">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-on-primary-fixed" href="#top">
+                Bäckerhaus
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex space-x-8 items-center font-label-sm text-label-sm">
+<a class="text-secondary dark:text-secondary-fixed font-semibold border-b-2 border-secondary pb-1" href="#universo">Universo</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300" href="#menus">Cartas</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300" href="#branches">Sucursales</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary hover:text-secondary dark:hover:text-secondary-fixed transition-all duration-300" href="#wholesale">Mayoristas</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:flex items-center">
+<a class="flex items-center space-x-2 text-primary font-label-sm text-label-sm hover:text-secondary transition-colors scale-95 active:scale-90 transition-transform" href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer">
+<span class="">Instagram &amp; contacto</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button id="menuToggle" aria-label="Abrir menú" aria-expanded="false" class="md:hidden text-primary focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+
+<!-- Mobile Nav -->
+<div id="mobileMenu" class="hidden md:hidden border-t border-outline-variant/40 bg-surface/95 backdrop-blur-md">
+    <div class="px-gutter py-5 max-w-container-max mx-auto flex flex-col gap-4 font-label-sm text-label-sm">
+        <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#universo">Universo</a>
+        <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#menus">Cartas</a>
+        <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#branches">Sucursales</a>
+        <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#wholesale">Mayoristas</a>
+        <a class="text-secondary" href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer">Instagram &amp; contacto</a>
+    </div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="A cinematic, high-resolution wide shot of a rustic artisanal bakery interior in a warm, inviting light-mode aesthetic. Flour dusts heavy wooden tables where freshly baked artisanal sourdough loaves and delicate pastries rest. Sunlight streams through large industrial windows, highlighting the steam rising from a premium espresso machine in the background. Deep espresso browns, creamy whites, and warm amber tones dominate the scene, evoking a sophisticated, slow-paced gastronomic culture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD37-uGgtS0yW3TjIfoGOjwmKXXkHy3c-bwiHndseAHF5W5QTJG5T_Nl5vkJU7uZhc1xbankNV49eSTPfkT2Uo0wGGmQpy1Y9Wr6h4arWfe8AMZZa_ifYmBaUFqmQYlYZtMrGE0qBZ96k_nsq9WJxANvPM555gQ9BGFlNQyuMphnivKVKAhrfn9g0_N83c27ppDqEHsIpbPBmEKhSqGWObL7KHJC3mqSfQbQaZ921s6hPBCD_qo8j0Y6w')">
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile flex flex-col items-center mt-20 fade-in-section is-visible">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">
+                BÄCKERHAUS
+            </h1>
+<p class="font-label-sm text-label-sm text-secondary tracking-[0.2em] uppercase mb-8">
+                Pan. Café. Vermut.
+            </p>
+<p class="font-body-lg text-body-lg text-primary-container max-w-lg mx-auto mb-10">
+                Un universo de sabores para cualquier momento del día.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+<a class="bg-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded hover:bg-secondary transition-colors duration-300 w-full sm:w-auto text-center" href="#menus">
+                    Ver cartas
+                </a>
+<a class="border border-primary text-primary font-label-sm text-label-sm px-8 py-4 rounded hover:bg-surface-variant transition-colors duration-300 w-full sm:w-auto text-center" href="#branches">
+                    Encontrá tu Bäckerhaus
+                </a>
+</div>
+</div>
+</section>
+<!-- Section: Un universo de sabores -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto fade-in-section is-visible" id="universo">
+<div class="max-w-2xl mx-auto text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Un universo de sabores</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                En Bäckerhaus, fusionamos la calidez artesanal del pan recién horneado con la sofisticación de un café de especialidad y el ritual social del vermut. Nuestro espacio está diseñado para pausar, disfrutar y conectar a través de una propuesta gastronómica auténtica y cuidada.
+            </p>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="pb-section-gap px-gutter max-w-container-max mx-auto" id="menus">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group cursor-pointer fade-in-section is-visible">
+<div class="relative overflow-hidden h-[400px] mb-6 ambient-shadow bg-surface-container">
+<img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A top-down, magazine-style flat lay of a premium artisanal breakfast on a textured cream table. A perfectly poured latte with intricate latte art sits next to a flaky, golden-brown butter croissant resting on a minimalist ceramic plate. The lighting is soft, natural, and bright, enhancing the warm golden hues of the pastry and the rich brown of the coffee. The composition includes ample negative space, fitting a refined neo-bistro aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxqgQKtc2McEMHIqa2pr1t1gGZv9SSC5DhUUTYK9VJqhWCCRSPyx52Eok71GMLPdctRY3xsD5p9eg-tJjkt0ehgUDivS2p-7eghqyrTOGmPAEEQLUFpzXnJzrhGAoc11mooenESyEqXDektL9btHix9v_onwtlRhvuMXCGKqyGyV8pMQjfpHTSEUWMtCo4jDqUXaUteG2w4CzGq2NrBWRSJBx9QmJg0h1wovRwAttMBbmTwNIJ82oOg">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Desayunos &amp; meriendas</h3>
+<a class="inline-flex items-center space-x-2 text-secondary font-label-sm text-label-sm hover:text-primary transition-colors" href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer">
+<span class="">Ver carta</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer fade-in-section is-visible" style="transition-delay: 100ms;">
+<div class="relative overflow-hidden h-[400px] mb-6 ambient-shadow bg-surface-container">
+<img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An elegant, close-up shot of a sophisticated brunch plate. A perfectly poached egg sits atop a slice of thick, rustic sourdough bread, drizzled with hollandaise sauce, accompanied by vibrant green avocado and microgreens. The scene is set on a light, minimalist surface with a shallow depth of field, blurring out a glass of fresh orange juice in the background. The mood is fresh, high-end, and appetizing, typical of a luxury lifestyle magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbWyoCtl6B3XohY5IYPGBswN8llQU8HRWHTYZdMaZ1MpZoSLECLKS_8aNzGziX2JRR6STfNYArwRS_C0Sjt3TpJV7lzkDY1RtWDSb7WcRmN7dMg-hkWFuUNtnI7NNWQyS0zTJk68mFkV-A4ke-W4NvojXr0PloFwVGHrPofldzXH_igqBvL7uiFPTD0CujAh22c66kzZBKbKkfph3E2LelBMqOoQuE5d8kqAExIHFRj1qxLcnHol9nHg">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Brunch &amp; almuerzo</h3>
+<a class="inline-flex items-center space-x-2 text-secondary font-label-sm text-label-sm hover:text-primary transition-colors" href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer">
+<span class="">Ver carta</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer fade-in-section is-visible bg-primary-container p-8" style="transition-delay: 200ms; background-color: rgb(33, 29, 26);">
+<div class="relative overflow-hidden h-[400px] mb-6 ambient-shadow bg-surface-container">
+<img class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A moody yet inviting evening scene focused on an artisanal tapas platter. Slices of premium cured meats, aged artisanal cheeses, and rustic bread chunks are beautifully arranged on a wooden board. Next to it, two elegant glasses filled with rich, dark red vermouth over ice and an orange slice sit catching a glint of warm, low-key evening light. The atmosphere is sophisticated, social, and distinctly neo-bistro." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfHBncBR90z0oRjyQML7LK_zFbRjM3hmHCGq405bGtGQsCuHg6nW46ZJlAIdhWyNhHj4BMStMPYIwdH46pcMPFkoTH89BQ-x4W1Vj2lvWYvh5IZZNPbMqSW9IEG6EqUBSUHjGCRSeWjAVRXpaCeVYzhnaDcARr97OXoFRQHmCYWL_bkMh6J2FX-uX_3RBwHpU8yfSW3FFSt8JPYtT7dRgKMtJgUr6U1wkUQZu8XTsimdM5y4mV66rBkQ">
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-primary">Cena &amp; picadas</h3>
+<a class="inline-flex items-center space-x-2 font-label-sm text-label-sm hover:text-primary transition-colors text-on-primary" href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer">
+<span class="">Ver carta</span>
+<span class="material-symbols-outlined text-sm text-on-primary">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Section: Encontrá tu Bäckerhaus -->
+<section class="py-section-gap bg-surface-container-low fade-in-section is-visible" id="branches">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-12">Encontrá tu Bäckerhaus</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Branch 1 -->
+<div class="bg-surface p-8 ambient-shadow flex flex-col justify-between">
+<div>
+<h3 class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mb-2">General Paz</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Fray Mamerto Esquiú 14</p>
+</div>
+<div class="space-y-3">
+<a href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center space-x-2 border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">chat</span>
+<span class="">WhatsApp / contacto</span>
+</a>
+<div class="grid grid-cols-2 gap-3">
+<a href="https://www.google.com/maps/search/?api=1&query=Fray+Mamerto+Esqui%C3%BA+14+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer" class="w-full border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors text-center flex items-center justify-center">
+    Cómo llegar
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Fray+Mamerto+Esqui%C3%BA+14+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer" class="w-full border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors text-center flex items-center justify-center">
+    Ver ubicación
+</a>
+</div>
+</div>
+</div>
+<!-- Branch 2 -->
+<div class="bg-surface p-8 ambient-shadow flex flex-col justify-between">
+<div>
+<h3 class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mb-2">Alta Córdoba</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Juan A. Sarachaga 820</p>
+</div>
+<div class="space-y-3">
+<a href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center space-x-2 border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">chat</span>
+<span class="">WhatsApp / contacto</span>
+</a>
+<div class="grid grid-cols-2 gap-3">
+<a href="https://www.google.com/maps/search/?api=1&query=Juan+A.+Sarachaga+820+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer" class="w-full border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors text-center flex items-center justify-center">
+    Cómo llegar
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Juan+A.+Sarachaga+820+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer" class="w-full border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors text-center flex items-center justify-center">
+    Ver ubicación
+</a>
+</div>
+</div>
+</div>
+<!-- Branch 3 -->
+<div class="bg-surface p-8 ambient-shadow flex flex-col justify-between">
+<div>
+<h3 class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mb-2">Güemes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Belgrano 659</p>
+</div>
+<div class="space-y-3">
+<a href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center space-x-2 border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">chat</span>
+<span class="">WhatsApp / contacto</span>
+</a>
+<div class="grid grid-cols-2 gap-3">
+<a href="https://www.google.com/maps/search/?api=1&query=Belgrano+659+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer" class="w-full border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors text-center flex items-center justify-center">
+    Cómo llegar
+</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Belgrano+659+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer" class="w-full border-inset-soft text-primary font-label-sm text-label-sm py-3 hover:bg-surface-variant transition-colors text-center flex items-center justify-center">
+    Ver ubicación
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Section: Venta mayorista -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto fade-in-section is-visible" id="wholesale">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-7">
+            <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4">Para negocios</p>
+            <h2 class="font-headline-md text-headline-md text-primary mb-6">Venta mayorista</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Una propuesta pensada para quienes quieren llevar el universo Bäckerhaus a su propio negocio.
+            </p>
+        </div>
+        <div class="md:col-span-5 md:flex md:justify-end">
+            <a href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded hover:bg-secondary transition-colors duration-300">
+                Consultar por mayorista
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container dark:bg-primary-container fade-in-section is-visible">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-gutter">
+<!-- Brand Column -->
+<div class="md:col-span-1 flex flex-col items-start space-y-4">
+<span class="font-display-lg text-headline-md text-primary dark:text-on-primary-fixed">Bäckerhaus</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container text-sm">
+                    Pan, Café, Vermut.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="md:col-span-2 flex flex-col sm:flex-row gap-8 sm:gap-16">
+<div class="flex flex-col space-y-3">
+<span class="font-label-sm text-label-sm text-primary dark:text-on-primary-fixed uppercase tracking-widest mb-2">Sucursales</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm" href="https://www.google.com/maps/search/?api=1&query=Fray+Mamerto+Esqui%C3%BA+14+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer">General Paz</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm" href="https://www.google.com/maps/search/?api=1&query=Juan+A.+Sarachaga+820+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer">Alta Córdoba</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm" href="https://www.google.com/maps/search/?api=1&query=Belgrano+659+C%C3%B3rdoba+Argentina" target="_blank" rel="noopener noreferrer">Güemes</a>
+</div>
+<div class="flex flex-col space-y-3">
+<span class="font-label-sm text-label-sm text-primary dark:text-on-primary-fixed uppercase tracking-widest mb-2">Más</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm" href="#wholesale">Mayoristas</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed transition-colors text-sm" href="https://linktr.ee/backerhaus.cba" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+</div>
+<!-- Copyright Column -->
+<div class="md:col-span-1 flex flex-col justify-end items-start md:items-end mt-8 md:mt-0">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-primary-container text-xs opacity-80 hover:opacity-100 transition-opacity">
+                    © <span id="year"></span> Bäckerhaus Córdoba.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+            const open = menuToggle.getAttribute("aria-expanded") === "true";
+            menuToggle.setAttribute("aria-expanded", String(!open));
+            menuToggle.setAttribute("aria-label", open ? "Abrir menú" : "Cerrar menú");
+            mobileMenu.classList.toggle("hidden", open);
+            document.body.classList.toggle("mobile-menu-open", !open);
+            const icon = menuToggle.querySelector(".material-symbols-outlined");
+            if (icon) icon.textContent = open ? "menu" : "close";
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Abrir menú");
+                document.body.classList.remove("mobile-menu-open");
+                const icon = menuToggle.querySelector(".material-symbols-outlined");
+                if (icon) icon.textContent = "menu";
+            });
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".fade-in-section").forEach((section) => {
+        observer.observe(section);
+    });
+
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+});
+</script>
+
+
+<noscript><div style="padding:16px;text-align:center;font-family:Arial,sans-serif;background:#f2e8cf;">Esta experiencia funciona mejor con JavaScript habilitado.</div></noscript>
+</body></html>
